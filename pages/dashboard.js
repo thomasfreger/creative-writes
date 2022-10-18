@@ -22,7 +22,7 @@ export default function Dashboard() {
     const q = query(collectionRef, where('user', '==', user.uid));
     const unsubscribe = onSnapshot(q, (snapshot => {
       setPosts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
-    }))
+    }));
     return unsubscribe;
   };
 
